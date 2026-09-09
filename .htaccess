@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block direct access to sensitive files and folders
+    RewriteRule ^\.env - [F,L]
+    RewriteRule ^app/ - [F,L]
+
+    # Forward traffic to the public directory if not already there
+    RewriteCond %{REQUEST_URI} !/public/ [NC]
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

@@ -1,0 +1,23 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated frontend assets
+node_modules/
+public/assets/css/style.css
+
+# Local database files and runtime data
+app/config/*.db
+*.sqlite
+*.sqlite3
+
+# IDE and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
