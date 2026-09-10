@@ -1,5 +1,5 @@
 <footer class="mt-auto border-t border-slate-200 px-4 py-5 text-center text-xs text-slate-400 sm:px-8">
-    CITE POS &middot; IT Department &middot; <?= date('Y') ?>
+    CITE POS &middot; IT Department &middot; <?= date('Y') ?> &middot; Developed by <a href="https://github.com/VNR2WO" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-slate-600 transition-colors">Vinardo Galula Butil</a>
 </footer>
 <?php require __DIR__ . '/../modals/confirmation.php'; ?>
 <script>

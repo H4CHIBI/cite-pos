@@ -11,8 +11,8 @@ $errorMessage = $errorMessage ?? null;
     <link rel="icon" type="image/png" href="/pos-cite/public/assets/images/logo_it.png">
     <link rel="stylesheet" href="/pos-cite/public/assets/css/style.css">
 </head>
-<body class="m-0 min-h-screen bg-[#f5f7fc] font-sans text-[#17213a]">
-    <main class="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_10%_10%,rgba(247,148,29,.12),transparent_26rem),radial-gradient(circle_at_95%_90%,rgba(18,63,165,.12),transparent_28rem),#f5f7fc] p-4 sm:p-8">
+<body class="m-0 min-h-screen bg-[#f5f7fc] font-sans text-[#17213a] flex flex-col">
+    <main class="flex flex-1 flex-col items-center justify-center bg-[radial-gradient(circle_at_10%_10%,rgba(247,148,29,.12),transparent_26rem),radial-gradient(circle_at_95%_90%,rgba(18,63,165,.12),transparent_28rem),#f5f7fc] p-4 sm:p-8">
         <section class="grid min-h-[620px] w-full max-w-[1050px] grid-cols-[minmax(0,1.04fr)_minmax(360px,.96fr)] overflow-hidden rounded-[24px] border border-[#071947]/[0.08] bg-white shadow-[0_24px_70px_rgba(7,25,71,.16)] max-[760px]:block max-[760px]:min-h-0 max-[760px]:rounded-[18px]" aria-label="CITE POS sign in">
             <div class="relative flex flex-col justify-center overflow-hidden bg-[linear-gradient(145deg,#071947,#09245f_62%,#123b92)] p-8 text-white before:absolute before:-right-[210px] before:-bottom-[200px] before:h-[420px] before:w-[420px] before:rounded-full before:border before:border-[#f7941d]/30 after:absolute after:-right-[135px] after:-bottom-[135px] after:h-[290px] after:w-[290px] after:rounded-full after:border after:border-[#f7941d]/30 sm:p-16 max-[760px]:min-h-[320px] max-[760px]:p-10">
                 <div class="relative z-[1]">
@@ -62,6 +62,10 @@ $errorMessage = $errorMessage ?? null;
                 </form>
             </div>
         </section>
+
+        <footer class="mt-8 text-center text-xs text-slate-400 sm:mt-12 w-full">
+            CITE POS &middot; IT Department &middot; <?= date('Y') ?> &middot; Developed by <a href="https://github.com/VNR2WO" target="_blank" rel="noopener noreferrer" class="font-medium hover:text-slate-600 transition-colors">Vinardo Galula Butil</a>
+        </footer>
     </main>
 
     <script>
