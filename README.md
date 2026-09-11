@@ -55,7 +55,8 @@ cd D:\xampp\htdocs\cite-pos\database\migrations
 Execute the migration script:
 
 ```Bash
-php Migrate.php```
+php Migrate.php
+```
 
 Step 2: Run Seeders
 
@@ -65,24 +66,28 @@ Navigate back one directory and into the seeders folder:
 
 ```Bash
 cd ..
-cd seeders```
+cd seeders 
+```
 
 Execute the seeder script:
 
 ```Bash
-php UserSeeder.php```
+php UserSeeder.ph 
+```
 
 If you are opening a new terminal window:
 
 Navigate directly to the seeders directory:
 
 ```Bash
-cd D:\xampp\htdocs\cite-pos\database\seeders```
+cd D:\xampp\htdocs\cite-pos\database\seeders
+```
 
 Execute the seeder script:
 
 ```Bash
-php UserSeeder.php```
+php UserSeeder.php
+```
 
 
 ## Default accounts
