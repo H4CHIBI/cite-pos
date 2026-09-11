@@ -1,3 +1,6 @@
+<?php
+return "
+DROP TABLE IF EXISTS `students`;
 CREATE TABLE IF NOT EXISTS students (
     student_id INT AUTO_INCREMENT PRIMARY KEY,
     student_number VARCHAR(50) NOT NULL UNIQUE,
@@ -7,4 +10,4 @@ CREATE TABLE IF NOT EXISTS students (
     department_id INT NOT NULL,
     CONSTRAINT fk_students_department
         FOREIGN KEY (department_id) REFERENCES departments(department_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";

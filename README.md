@@ -2,13 +2,13 @@
 
 CITE POS is a PHP and MySQL point-of-sale system for the IT Department. It supports sales, inventory and batch management, student releases, transactions, user management, and audit logs. The interface is built with Tailwind CSS.
 
-## Requirements
+## 🛠 Prerequisites
 
 - XAMPP (Apache, PHP 8.0+ and MySQL/MariaDB)
 - Node.js and npm (to rebuild the Tailwind stylesheet)
 - PHP PDO MySQL extension enabled
 
-## Setup
+## 🚀 Installation & Setup
 
 1. Copy the project into the XAMPP web root, for example `C:\xampp\htdocs\pos-cite`.
 2. Start Apache and MySQL from the XAMPP Control Panel.
@@ -38,59 +38,52 @@ CITE POS is a PHP and MySQL point-of-sale system for the IT Department. It suppo
 
 8. Open [http://localhost/pos-cite/public/](http://localhost/pos-cite/public/) in a browser. If Apache rewrite rules are enabled, [http://localhost/pos-cite/](http://localhost/pos-cite/) also works.
 
-## Running the migrations
+## 🗄️ Database Management
+To set up your database tables and default data, you will need to run the provided PHP migration and seeder scripts via your Bash terminal.
 
-The migration files must be executed in filename order because later tables reference earlier tables.
+```⚠️ IMPORTANT: Verify that your terminal is pointing to the exact location where your project is uploaded inside the XAMPP htdocs folder.```
 
-### Option 1: phpMyAdmin
+Step 1: Run Migrations
 
-1. Open `http://localhost/phpmyadmin`.
-2. Create and select the `pos_cite` database.
-3. Open the **Import** tab.
-4. Select each file from `database/migrations/tables/`, starting with `001_create_departments.sql` and ending with `011_update_transaction_item_statuses.sql`.
-5. Click **Import** for each file in order.
-6. Import `database/seeders/users.sql` last to create the default accounts.
+Open your bash terminal.
 
-### Option 2: MySQL command line
+Navigate to the migrations directory:
 
-From the project root, run the following command in PowerShell. Replace the host, port, username, and password with the values in your `.env` file:
+```Bash
+cd D:\xampp\htdocs\cite-pos\database\migrations```
 
-```powershell
-$mysql = 'C:\xampp\mysql\bin\mysql.exe'
-$connection = @('-h', '127.0.0.1', '-P', '3306', '-u', 'root', 'pos_cite')
+Execute the migration script:
 
-Get-ChildItem '.\database\migrations\tables\*.sql' |
-    Sort-Object Name |
-    ForEach-Object {
-        Get-Content $_.FullName -Raw | & $mysql @connection
-        if ($LASTEXITCODE -ne 0) {
-            throw "Migration failed: $($_.Name)"
-        }
-    }
+```Bash
+php Migrate.php```
 
-Get-Content '.\database\seeders\users.sql' -Raw | & $mysql @connection
-if ($LASTEXITCODE -ne 0) {
-    throw 'User seeder failed.'
-}
-```
+Step 2: Run Seeders
 
-If MySQL has a password, add `-p` to `$connection`; the client will prompt for it securely:
+If you are continuing in the same terminal window immediately after running the migration:
 
-```powershell
-$connection = @('-h', '127.0.0.1', '-P', '3306', '-u', 'root', '-p', 'pos_cite')
-```
+Navigate back one directory and into the seeders folder:
 
-### Running one migration file
+```Bash
+cd ..
+cd seeders```
 
-To run a specific migration instead of all migrations, use the same MySQL connection and pipe the file into the MySQL client:
+Execute the seeder script:
 
-```powershell
-$mysql = 'C:\xampp\mysql\bin\mysql.exe'
-$connection = @('-h', '127.0.0.1', '-P', '3306', '-u', 'root', 'pos_cite')
-Get-Content '.\database\migrations\tables\001_create_departments.sql' -Raw | & $mysql @connection
-```
+```Bash
+php UserSeeder.php```
 
-Replace `001_create_departments.sql` with the migration file you want to execute. Run prerequisite migrations first when the selected file has foreign-key dependencies.
+If you are opening a new terminal window:
+
+Navigate directly to the seeders directory:
+
+```Bash
+cd D:\xampp\htdocs\cite-pos\database\seeders```
+
+Execute the seeder script:
+
+```Bash
+php UserSeeder.php```
+
 
 ## Default accounts
 
@@ -118,7 +111,7 @@ public/         Web entry point and published assets
 src/css/        Tailwind CSS input
 ```
 
-## Development notes
+## 📝 Development Notes
 
 - `public/index.php` is the application router and should be the web server entry point.
 - Keep secrets in `.env`; `.gitignore` excludes local environment files.

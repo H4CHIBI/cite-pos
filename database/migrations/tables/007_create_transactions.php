@@ -1,3 +1,6 @@
+<?php
+return "
+DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE IF NOT EXISTS transactions (
     transaction_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -11,4 +14,4 @@ CREATE TABLE IF NOT EXISTS transactions (
     is_void BOOLEAN NOT NULL DEFAULT FALSE,
     CONSTRAINT fk_transactions_user
         FOREIGN KEY (user_id) REFERENCES users(user_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";

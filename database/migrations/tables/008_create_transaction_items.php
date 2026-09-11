@@ -1,3 +1,6 @@
+<?php
+return "
+DROP TABLE IF EXISTS `transaction_items`;
 CREATE TABLE IF NOT EXISTS transaction_items (
     item_id INT AUTO_INCREMENT PRIMARY KEY,
     transaction_id INT NOT NULL,
@@ -15,4 +18,4 @@ CREATE TABLE IF NOT EXISTS transaction_items (
         FOREIGN KEY (batch_id) REFERENCES batches(batch_id),
     CONSTRAINT fk_transaction_items_owner
         FOREIGN KEY (owner_id) REFERENCES students(student_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";

@@ -1,3 +1,6 @@
+<?php
+return "
+DROP TABLE IF EXISTS `audit_logs`;
 CREATE TABLE IF NOT EXISTS audit_logs (
     log_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NULL,
@@ -10,4 +13,4 @@ CREATE TABLE IF NOT EXISTS audit_logs (
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_audit_logs_user
         FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";
