@@ -50,8 +50,8 @@ Open your bash terminal.
 Navigate to the migrations directory:
 
 ```Bash
-cd D:\xampp\htdocs\cite-pos\database\migrations```
-
+cd D:\xampp\htdocs\cite-pos\database\migrations
+```
 Execute the migration script:
 
 ```Bash
